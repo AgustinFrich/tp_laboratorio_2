@@ -39,7 +39,6 @@ namespace MiCalculadora
             e.Cancel = (MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No);
         }
 
-
         /// <summary>
         /// Obtiene los datos del formulario y realiza la operación indicada. Escribe el resultado en un label y guarda la operacion en una lista.
         /// </summary>
@@ -50,9 +49,11 @@ namespace MiCalculadora
             StringBuilder sb = new StringBuilder();
 
             lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-
-            sb.Append(txtNumero1.Text + " ");
-
+            if (!String.IsNullOrWhiteSpace(txtNumero1.Text))
+                sb.Append(txtNumero1.Text + " ");
+            else
+                sb.Append("0 ");
+            
             if (cmbOperador.Text != "")
             {
                 sb.Append(cmbOperador.Text + " ");
@@ -62,7 +63,12 @@ namespace MiCalculadora
                 sb.Append("+ ");
             }
 
-            sb.Append(txtNumero2.Text + " = " + lblResultado.Text);
+            if (!String.IsNullOrWhiteSpace(txtNumero2.Text))
+                sb.Append(txtNumero2.Text);
+            else
+                sb.Append('0');
+
+            sb.Append(" = " + lblResultado.Text);
 
             lstOperaciones.Items.Add(sb);
         }
