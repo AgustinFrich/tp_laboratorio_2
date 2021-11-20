@@ -1,0 +1,41 @@
+{
+  "Titulo": "Fabricas por todos lados",
+  "Elementos": [
+    {
+      "TipoFabrica": 200000,
+      "Nombre": "MUNDO TEXTIL S.A.",
+      "Provincia": 20,
+      "GasesEmitidos": 330000,
+      "Cantidad": 3
+    },
+    {
+      "TipoFabrica": 500000,
+      "Nombre": "DIONE QUÍMICA S.A.",
+      "Provincia": 11,
+      "GasesEmitidos": 500000,
+      "Cantidad": 1
+    },
+    {
+      "TipoFabrica": 500000,
+      "Nombre": "QUÍMICA MORENO",
+      "Provincia": 0,
+      "GasesEmitidos": 520000,
+      "Cantidad": 2
+    },
+    {
+      "TipoFabrica": 650000,
+      "Nombre": "BICICLETAS FUTURA S.R.L.",
+      "Provincia": 7,
+      "GasesEmitidos": 540000,
+      "Cantidad": 1
+    },
+    {
+      "TipoFabrica": 200000,
+      "Nombre": "TEXTIL IBERO AMERICANA S.A.",
+      "Provincia": 15,
+      "GasesEmitidos": 260000,
+      "Cantidad": 4
+    }
+  ],
+  "CantidadTotal": 2
+}
