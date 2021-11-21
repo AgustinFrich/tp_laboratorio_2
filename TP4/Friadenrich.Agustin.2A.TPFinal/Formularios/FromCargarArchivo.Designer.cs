@@ -85,6 +85,7 @@ namespace Formularios
             this.Controls.Add(this.CargarAmbos);
             this.Name = "FromCargarArchivo";
             this.Text = "CargarArchivo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCargarArchivo_FormClosing);
             this.Load += new System.EventHandler(this.FromCargarArchivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

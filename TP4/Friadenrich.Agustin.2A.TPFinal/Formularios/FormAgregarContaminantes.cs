@@ -13,7 +13,6 @@ namespace Formularios
 
     public partial class FormAgregarContaminantes : Form
     {
-
         string nombre;
         EAgentes agente;
 
@@ -25,11 +24,23 @@ namespace Formularios
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga el comboBox que permite seleccionar el o los tipos de agentes que se analizaran
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormAgregarContaminantes_Load(object sender, EventArgs e)
         {
+            this.txtNombre.Text = "Fabricas por todos lados";
             this.cmbAgente.DataSource = Enum.GetValues(typeof(EAgentes));
         }
 
+        /// <summary>
+        /// Asigna los valores de nombre y agente en funcion de los ingresados por el usuario.
+        /// Si el nombre está vacio, se ingresa 'Sin nombre' en su lugar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.nombre = this.txtNombre.Text;
@@ -50,6 +61,11 @@ namespace Formularios
             this.DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// Cancela la ejecucion del formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

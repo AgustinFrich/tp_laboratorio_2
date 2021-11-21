@@ -4,7 +4,7 @@ using Excepciones;
 
 namespace Entidades
 {
-    public abstract class Contaminantes
+    public abstract class Contaminante
     {
         protected EProvincias provincia;
         protected string nombre;
@@ -16,7 +16,7 @@ namespace Entidades
         /// <summary>
         /// Constructor publico sin parámetros utilizado para la deserialización JSON
         /// </summary>
-        public Contaminantes()
+        public Contaminante()
         {
         }
 
@@ -28,7 +28,7 @@ namespace Entidades
         /// <param name="nombre"></param>
         /// <param name="cantidad"></param>
         /// <param name="gasesEmitidos"></param>
-        public Contaminantes(EProvincias provincia, string nombre, int cantidad, int gasesEmitidos)
+        public Contaminante(EProvincias provincia, string nombre, int cantidad, int gasesEmitidos)
         {
             if(!String.IsNullOrWhiteSpace(nombre))
             {
@@ -164,15 +164,14 @@ namespace Entidades
         #region Operadores
 
         /// <summary>
-        /// Verifica la igualdad entre dos contaminantes. Solo devolverá true si los nombres,
-        /// gases emitidos, provinica y cantidad son iguales.
+        /// Verifica la igualdad entre dos contaminantes. Solo devolverá true si el nombre y la provincia son iguales
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>
-        /// bool True si todos los atributos son iguales.
+        /// bool True si los nombres y las provincias son iguales
         /// </returns>
-        public static bool operator ==(Contaminantes a, Contaminantes b)
+        public static bool operator ==(Contaminante a, Contaminante b)
         {
             bool resultado = false;
 
@@ -188,14 +187,14 @@ namespace Entidades
 
         /// <summary>
         /// Verifica la desigualdad entre dos contaminantes. Solo devolverá true si alguno de los nombres,
-        /// gases emitidos, provinica o cantidades son diferentes.
+        /// o provinicas son diferentes.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>
-        /// bool True si todos algun atributo es distinto.
+        /// bool True si el nombre o la provincia son distintos.
         /// </returns>
-        public static bool operator !=(Contaminantes a, Contaminantes b)
+        public static bool operator !=(Contaminante a, Contaminante b)
         {
             return !(a == b);
         }

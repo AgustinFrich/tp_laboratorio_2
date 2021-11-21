@@ -8,11 +8,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Entidades.Contaminantes">
+  <Class Name="Entidades.Contaminante">
     <Position X="0.5" Y="0.5" Width="5.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAEAAAQgIACEAAAIgAAADAAAAAQAAAAAAAAAAiA=</HashCode>
-      <FileName>Contaminantes.cs</FileName>
+      <FileName>Contaminante.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Vehiculo">
@@ -27,6 +27,20 @@
     <TypeIdentifier>
       <HashCode>AAAABAAAAAQgIAAEAAAAAIAAAAAAAAAAAAAAkAAAAiA=</HashCode>
       <FileName>Fabrica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.TiempoAEsperarArgs">
+    <Position X="19" Y="7.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACA=</HashCode>
+      <FileName>TiempoAEsperarArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SQLExtension">
+    <Position X="20.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABQAAAABAAAEAUQgCAAAAAAAAAAUAgA=</HashCode>
+      <FileName>SQLExtension.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Entidades.IArchivos&lt;T&gt;">

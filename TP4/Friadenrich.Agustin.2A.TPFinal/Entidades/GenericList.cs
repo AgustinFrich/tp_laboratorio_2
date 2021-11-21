@@ -7,7 +7,7 @@ using Excepciones;
 
 namespace Entidades
 {
-    public class GenericList<T> : IArchivos<GenericList<T>> where T : Contaminantes
+    public class GenericList<T> : IArchivos<GenericList<T>> where T : Contaminante
     {
         string titulo;
         List<T> elementos;
@@ -137,6 +137,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("Se muestra la lista generica: ");
+            sb.AppendLine("Proveedor de datos: " + this.titulo);
             sb.AppendLine("\n========================================================================");
             
             foreach(T item in Elementos)

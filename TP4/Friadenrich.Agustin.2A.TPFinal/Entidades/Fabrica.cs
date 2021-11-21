@@ -4,7 +4,7 @@ using Excepciones;
 
 namespace Entidades
 {
-    public class Fabrica : Contaminantes
+    public class Fabrica : Contaminante
     {
         ETipoFabrica tipo;
 
@@ -67,7 +67,6 @@ namespace Entidades
 
         #endregion
         
-
         #region Propiedades
 
         public ETipoFabrica TipoFabrica
@@ -203,12 +202,11 @@ namespace Entidades
         #region Operadores
 
         /// <summary>
-        /// Comprueba que el tipo de dos fabricas sean iguales, a la vez que los atributos 
-        /// de su clase padre, Contaminates, sean iguales también
+        /// Comprueba que el nombre y la provincia de dos fabricas sean iguales
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns>bool True si todos los atrivutos son iguales.</returns>
+        /// <returns>bool True si los nombres y las provincias son iguales.</returns>
         public static bool operator ==(Fabrica a, Fabrica b)
         {
             bool resultado = false;
@@ -218,7 +216,7 @@ namespace Entidades
                 if (a is null || b is null)
                     throw new ContaminanteNuloException();
                 else
-                    resultado = (Contaminantes)a == b;
+                    resultado = (Contaminante)a == b;
             }
             catch (ContaminanteNuloException) { }
 
@@ -226,11 +224,11 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Comprueba que todos los datos de dos fabricas sean distintos.
+        /// Comprueba que el nombre o la provincia de dos fabricas sean distintos.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns>bool True si algun atributo es distinto.</returns>
+        /// <returns>bool Truesi el nombre o la provincia son distintos.</returns>
         public static bool operator !=(Fabrica a, Fabrica b)
         {
             return !(a == b);

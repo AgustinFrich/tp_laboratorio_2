@@ -4,7 +4,7 @@ using Excepciones;
 
 namespace Entidades
 {
-    public class Vehiculo : Contaminantes
+    public class Vehiculo : Contaminante
     {
         ETipoVehiculo tipo;
 
@@ -202,34 +202,22 @@ namespace Entidades
         #region Operadores
 
         /// <summary>
-        /// Comprueba que el tipo de dos vehiculos sean iguales, a la vez que los atributos 
-        /// de su clase padre, Contaminates, sean iguales también
+        /// Comprueba que el nombre y la provincia de dos vehiculos sean iguales.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns>true si todos los atrivutos son iguales</returns>
+        /// <returns>true si los nombres y las provinicas son iguales</returns>
         public static bool operator ==(Vehiculo a, Vehiculo b)
         {
-            bool resultado = false;
-
-            try
-            {
-                if (a is null || b is null)
-                    throw new ContaminanteNuloException();
-                else
-                    resultado = (Contaminantes)a == b;
-            }
-            catch (ContaminanteNuloException) { }
-
-            return resultado;
+            return (Contaminante)a == b;
         }
 
         /// <summary>
-        /// Comprueba que todos los datos de dos vehiculos sean distintos.
+        /// Comprueba que el nombre o la provincia de dos vehiculos sean distintos.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns>true si algun atributo es distinto</returns>
+        /// <returns>true si el nombre o la provincia son distintos</returns>
         public static bool operator !=(Vehiculo a, Vehiculo b)
         {
             return !(a == b);

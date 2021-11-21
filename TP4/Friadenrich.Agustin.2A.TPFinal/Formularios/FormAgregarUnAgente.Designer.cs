@@ -57,7 +57,7 @@ namespace Formularios
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(19, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tipo: ";
             // 
@@ -147,11 +147,14 @@ namespace Formularios
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // AgregarUnAgente
+            // FormAgregarUnAgente
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(314, 342);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txGasesEmitidos);
@@ -164,7 +167,8 @@ namespace Formularios
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNombre);
-            this.Name = "AgregarUnAgente";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FormAgregarUnAgente";
             this.Text = "Agregar Vehiculo";
             this.Load += new System.EventHandler(this.AgregarUnAgente_Load);
             this.ResumeLayout(false);

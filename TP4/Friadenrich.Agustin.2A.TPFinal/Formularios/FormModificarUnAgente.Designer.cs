@@ -41,7 +41,7 @@ namespace Formularios
             this.txtGasesEmitidos = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblGasesEmitidos = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTipoConNombre
@@ -49,9 +49,9 @@ namespace Formularios
             this.lblTipoConNombre.AutoSize = true;
             this.lblTipoConNombre.Location = new System.Drawing.Point(20, 16);
             this.lblTipoConNombre.Name = "lblTipoConNombre";
-            this.lblTipoConNombre.Size = new System.Drawing.Size(152, 15);
+            this.lblTipoConNombre.Size = new System.Drawing.Size(121, 15);
             this.lblTipoConNombre.TabIndex = 0;
-            this.lblTipoConNombre.Text = "Contaminante a modificar: ";
+            this.lblTipoConNombre.Text = "Vehiculo a modificar: ";
             // 
             // lblProvincia
             // 
@@ -148,26 +148,29 @@ namespace Formularios
             this.lblGasesEmitidos.TabIndex = 13;
             this.lblGasesEmitidos.Text = "Gases emitidos (en kilogramos por auto): ";
             // 
-            // label4
+            // lblCantidad
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 202);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 15);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Cantidad: ";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(20, 202);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(189, 15);
+            this.lblCantidad.TabIndex = 12;
+            this.lblCantidad.Text = "Cantidad de autos en la provincia: ";
             // 
             // FormModificarUnAgente
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(320, 361);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtGasesEmitidos);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.lblGasesEmitidos);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblModificables);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.label2);
@@ -175,6 +178,7 @@ namespace Formularios
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.lblTipoConNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormModificarUnAgente";
             this.Text = "Modificar Agente";
             this.Load += new System.EventHandler(this.FormModificarUnAgente_Load);
@@ -197,6 +201,6 @@ namespace Formularios
         private System.Windows.Forms.TextBox txtGasesEmitidos;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label lblGasesEmitidos;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCantidad;
     }
 }

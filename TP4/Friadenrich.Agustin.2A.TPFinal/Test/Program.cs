@@ -38,8 +38,13 @@ namespace Test
                 Console.WriteLine(e.Message);
                 Console.WriteLine("");
             }
-            GenericList<Vehiculo> vehiculos = new GenericList<Vehiculo>();
-            GenericList<Fabrica> fabricas = new GenericList<Fabrica>();
+            GenericList<Vehiculo> vehiculos = new GenericList<Vehiculo>("TestProgram1");
+            GenericList<Fabrica> fabricas = new GenericList<Fabrica>("TestProgram1");
+
+            Console.WriteLine("Antes de comenzar, conecte la base de datos.");
+            Console.WriteLine("Los archivos estan en la carpeta base del proyecto");
+            Console.ReadLine();
+            Console.Clear();
 
             vehiculos += v1;
             vehiculos += v2;
@@ -48,6 +53,19 @@ namespace Test
             // agrego repetido
             vehiculos += v2;
 
+            //agrego a la base de datos
+            if (!v1.AgregarASQL(vehiculos.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + v1.Nombre + "a la base de datos");
+            if (!v2.AgregarASQL(vehiculos.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + v2.Nombre + "a la base de datos");
+            if (!v3.AgregarASQL(vehiculos.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + v3.Nombre + "a la base de datos");
+            if (!v4.AgregarASQL(vehiculos.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + v4.Nombre + "a la base de datos");
+            //argrego repetido
+            if (!v2.AgregarASQL(vehiculos.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + v2.Nombre + "a la base de datos");
+
             fabricas += f1;
             fabricas += f2;
             fabricas += f3;
@@ -55,6 +73,20 @@ namespace Test
             // agrego repetido
             fabricas += f4;
 
+            //agrego a la base de datos
+            if (!f1.AgregarASQL(fabricas.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + f1.Nombre + "a la base de datos");
+            if (!f2.AgregarASQL(fabricas.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + f2.Nombre + "a la base de datos");
+            if (!f3.AgregarASQL(fabricas.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + f3.Nombre + "a la base de datos");
+            if (!f4.AgregarASQL(fabricas.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + f4.Nombre + "a la base de datos");
+            //argrego repetido
+            if (!f4.AgregarASQL(fabricas.Titulo))
+                Console.WriteLine("\nNo se pudo agregar " + f4.Nombre + "a la base de datos");
+
+            //Mostrar lista local
             Console.WriteLine("Muestro la lista de vehiculos: ");
             Console.WriteLine("");
 
@@ -63,7 +95,19 @@ namespace Test
             Console.WriteLine("\nPresione enter para continuar");
             Console.ReadLine();
             Console.Clear();
+            
+            //Mostrar desde base de datos.
+            Console.WriteLine("Muestro la lista de vehiculos desde la base de datos: ");
+            Console.WriteLine("");
 
+            vehiculos = SQLExtension.ObtenerVehiculosSQL(vehiculos.Titulo);
+            Console.WriteLine(vehiculos.Listar());
+
+            Console.WriteLine("\nPresione enter para continuar");
+            Console.ReadLine();
+            Console.Clear();
+            
+            //Mostrar lista local
             Console.WriteLine("Muestro la lista de fabricas: ");
             Console.WriteLine("");
 
@@ -72,18 +116,42 @@ namespace Test
             Console.WriteLine("\nPresione enter para continuar");
             Console.ReadLine();
             Console.Clear();
+            
+            //Mostrar desde base de datos.
+            Console.WriteLine("Muestro la lista de fabricas desde la base de datos: ");
+            Console.WriteLine("");
 
+            fabricas = SQLExtension.ObtenerFabricasSQL(fabricas.Titulo);
+            Console.WriteLine(fabricas.Listar());
+
+            Console.WriteLine("\nPresione enter para continuar");
+            Console.ReadLine();
+            Console.Clear();
+            
             //Saco 2 y saco uno que no está en la lista
             vehiculos -= v4;
             vehiculos -= v3;
             vehiculos -= new Vehiculo(ETipoVehiculo.Grande, EProvincias.Formosa, "V5", 200, 72);
-
+            
+            //Lo mismo pero en la base de datos:
+            v4.EliminarASQL(vehiculos.Titulo);
+            v3.EliminarASQL(vehiculos.Titulo);
+            if (!new Vehiculo(ETipoVehiculo.Grande, EProvincias.Formosa, "V5", 200, 72).EliminarASQL(vehiculos.Titulo))
+                Console.WriteLine("\nNo se pudo eliminar el vehiculo, ya que no existe en la base de datos");
+            
             //Saco 2 y saco uno que no está en la lista
             fabricas -= f4;
             fabricas -= f3;
             //fabricas -= v2; -> error en tiempo de compliación
             fabricas -= new Fabrica(ETipoFabrica.Quimica, EProvincias.Chaco, "Fiat", 3, 500000);
-
+            
+            //Lo mismo pero en la base de datos:
+            f4.EliminarASQL(fabricas.Titulo);
+            f3.EliminarASQL(fabricas.Titulo);
+            if (!new Fabrica(ETipoFabrica.Quimica, EProvincias.Chaco, "Fiat", 3, 500000).EliminarASQL(fabricas.Titulo))
+                Console.WriteLine("\nNo se pudo eliminar la fabrica, ya que no existe en la base de datos");
+            
+            //muestro lista local
             Console.WriteLine("Muestro la lista de vehiculos despues de eliminar 2: ");
             Console.WriteLine("");
 
@@ -92,7 +160,19 @@ namespace Test
             Console.WriteLine("\nPresione enter para continuar");
             Console.ReadLine();
             Console.Clear();
+            
+            //muestro lista SQL
+            Console.WriteLine("Muestro la lista de vehiculos desde la base de datos: ");
+            Console.WriteLine("");
 
+            fabricas = SQLExtension.ObtenerFabricasSQL(fabricas.Titulo);
+            Console.WriteLine(fabricas.Listar());
+
+            Console.WriteLine("\nPresione enter para continuar");
+            Console.ReadLine();
+            Console.Clear();
+            
+            //Muestro lista local
             Console.WriteLine("Muestro la lista de fabricas despues de eliminar 2: ");
             Console.WriteLine("");
 
@@ -102,6 +182,25 @@ namespace Test
             Console.ReadLine();
             Console.Clear();
 
+            //Muestro lista SQL
+            
+            Console.WriteLine("Muestro la lista de fabricas desde la base de datos: ");
+            Console.WriteLine("");
+
+            fabricas = SQLExtension.ObtenerFabricasSQL(fabricas.Titulo);
+            Console.WriteLine(fabricas.Listar());
+
+            Console.WriteLine("\nPresione enter para continuar");
+            Console.ReadLine();
+            Console.Clear();
+
+            //Elimino lo que queda en las listas SQL para evitar errores en la proxima ejecucion
+            v2.EliminarASQL(vehiculos.Titulo);
+            v1.EliminarASQL(vehiculos.Titulo);
+            f2.EliminarASQL(fabricas.Titulo);
+            f1.EliminarASQL(fabricas.Titulo);
+
+            //Archivos
             //Creo un archivo y guardo los datos en el. Luego, borro los datos de la lista actual
 
             string path = Environment.CurrentDirectory + "/fabricas.json";

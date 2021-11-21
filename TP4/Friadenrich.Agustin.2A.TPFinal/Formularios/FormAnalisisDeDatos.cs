@@ -36,7 +36,7 @@ namespace Formularios
 
             //Combo Box de provincias:
             //Asignaría a una variable de tipo Array el resultado del Enum.GetValues, pero eso haría que ambas listas estuvieran linkeadas,
-            //Y mi porpósito es que se puedan comparar los datos entre distintas provincias.
+            //Y mi porpósito es que se puedan comparar los datos entre distintas provincias también.
             cmbProvinciaFabrica.DataSource = Enum.GetValues(typeof(EProvincias)); ;
             cmbProvinciaVehiculo.DataSource = Enum.GetValues(typeof(EProvincias)); ;
 
