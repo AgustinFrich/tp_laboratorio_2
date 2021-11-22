@@ -1,8 +1,8 @@
 {
-  "Titulo": "Analisis General",
+  "Titulo": "Vehiculos unidos",
   "Elementos": [
     {
-      "TipoVehiculo": 20,
+      "TipoVehiculo": 444,
       "Nombre": "Hyundai Ioniq",
       "Provincia": 13,
       "GasesEmitidos": 35,
@@ -13,25 +13,26 @@
       "Nombre": "Mercedes Benz - Camion",
       "Provincia": 22,
       "GasesEmitidos": 150,
-      "Cantidad": 900
+      "Cantidad": -900
     },
     {
       "TipoVehiculo": 60,
       "Nombre": "Ford T",
-      "Provincia": 8,
-      "GasesEmitidos": 65,
+      "Provincia": .8,
+      "GasesEmitidos": 650,
       "Cantidad": 1300
-    },
+    }, 
+    Texto no valido.
     {
       "TipoVehiculo": 60,
       "Nombre": "Toyota Etios",
-      "Provincia": 11,
+      "Provincia": 1"1",
       "GasesEmitidos": 70,
       "Cantidad": 550
     },
     {
       "TipoVehiculo": 40,
-      "Nombre": "VolskWagen Gol",
+      "Nombre": ,
       "Provincia": 7,
       "GasesEmitidos": 42,
       "Cantidad": 2200
@@ -39,9 +40,6 @@
     {
       "TipoVehiculo": 20,
       "Nombre": "Ford Mondeo Hybrid",
-      "Provincia": 2,
-      "GasesEmitidos": 10,
-      "Cantidad": 150
     }
   ]
 }

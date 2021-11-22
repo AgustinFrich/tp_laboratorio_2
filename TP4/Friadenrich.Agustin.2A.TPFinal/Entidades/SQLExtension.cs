@@ -228,7 +228,6 @@ namespace Entidades
                 string query = "DELETE FROM " + tabla + " WHERE nombre = @nombre AND provincia = @provincia AND proveedor = @proveedor";
 
                 EjecutarQuery(query, out resultado);
-
             }
             catch (Exception e)
             {

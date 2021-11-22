@@ -78,7 +78,7 @@ namespace Formularios
             this.lblAgente.AutoSize = true;
             this.lblAgente.Location = new System.Drawing.Point(28, 89);
             this.lblAgente.Name = "lblAgente";
-            this.lblAgente.Size = new System.Drawing.Size(169, 15);
+            this.lblAgente.Size = new System.Drawing.Size(168, 15);
             this.lblAgente.TabIndex = 4;
             this.lblAgente.Text = "Tipo de agente contaminante: ";
             // 
@@ -93,8 +93,10 @@ namespace Formularios
             // 
             // FormAgregarContaminantes
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(369, 221);
             this.Controls.Add(this.cmbAgente);
             this.Controls.Add(this.lblAgente);

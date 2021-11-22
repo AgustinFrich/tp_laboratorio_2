@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Formularios
 {
@@ -62,6 +63,8 @@ namespace Formularios
         /// <param name="e"></param>
         private void FormContaminantes_Load(object sender, EventArgs e)
         {
+            Task task = Task.Run(() => ObtenerLista());
+
             this.grpFabricas.Text = "Fabricas - Datos provenientes de: " + listaFabrica.Titulo;
             this.grpVehiculos.Text = "Vehiculos - Datos provenientes de: " + listaVehiculo.Titulo;
             this.cmbOrdenarFabricas.DataSource = Enum.GetValues(typeof(Ordenamientos));
@@ -85,8 +88,9 @@ namespace Formularios
                 this.btnGuardarFábricas.Enabled = false;
                 this.cmbOrdenarFabricas.Enabled = false;
             }
-
-            Task.Run(() => ObtenerLista()).Wait();
+            
+            this.Text = listaFabrica.Titulo + " / " + listaVehiculo.Titulo;
+            task.Wait();
             ActualizarDatos();
         }
 
@@ -183,7 +187,7 @@ namespace Formularios
         /// <param name="proveedor"></param>
         private void ModificarAgente(EAgentes agente, Contaminante contaminante, string proveedor)
         {
-            if(contaminante != null)
+            if(!(contaminante is null))
             {
                 FormModificarUnAgente form = new FormModificarUnAgente(agente, contaminante, proveedor)
                 {
@@ -321,12 +325,18 @@ namespace Formularios
         {
             GenericList<Fabrica> auxList = GetListaFabricas();
 
+            FormInicial.esperarConexionDelegada += FormInicial.ConectandoConElServidorEvento;
+            FormInicial.ManejadorEsperarConexion(sender, "Se agregaran las fabricas del archivo a la base de datos en segundo plano.", auxList.Elementos.Count, 5);
+
             foreach (Fabrica item in auxList.Elementos)
             {
                 listaFabrica += item;
             }
 
             this.grpFabricas.Text = "Fabricas - Datos provenientes de: " + listaFabrica.Titulo;
+
+            FormInicial.esperarConexionDelegada -= FormInicial.ConectandoConElServidorEvento;
+
             ActualizarDatos();
         }
 
@@ -339,12 +349,18 @@ namespace Formularios
         {
             GenericList<Vehiculo> auxList = GetListaVehiculos();
 
+            FormInicial.esperarConexionDelegada += FormInicial.ConectandoConElServidorEvento;
+            FormInicial.ManejadorEsperarConexion(sender, "Se agregaran los vehiculos del archivo a la base de datos en segundo plano.", auxList.Elementos.Count, 5);
+
             foreach (Vehiculo item in auxList.Elementos)
             {
                 listaVehiculo += item;
             }
 
             this.grpVehiculos.Text = "Vehiculos - Datos provenientes de: " + listaVehiculo.Titulo;
+
+            FormInicial.esperarConexionDelegada -= FormInicial.ConectandoConElServidorEvento;
+
             ActualizarDatos();
         }
 
@@ -373,10 +389,14 @@ namespace Formularios
             
             Task.Run(() =>
             {
-                foreach (Fabrica item in lista.Elementos)
+                try
                 {
-                    item.AgregarASQL(lista.Titulo);
+                    foreach (Fabrica item in lista.Elementos)
+                    {
+                        item.AgregarASQL(lista.Titulo);
+                    }
                 }
+                catch (InvalidOperationException) { }
             });
 
             return lista;
@@ -405,11 +425,14 @@ namespace Formularios
                 MessageBox.Show("No se pudieron cargar los datos de vehículos del archivo " + path + ". Este no es un archivo válido.", "Error al cargar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            Task.Run(() => { 
-                foreach (Vehiculo item in lista.Elementos)
+            Task.Run(() => {
+                try
                 {
-                    item.AgregarASQL(lista.Titulo);
-                }
+                    foreach (Vehiculo item in lista.Elementos)
+                    {
+                        item.AgregarASQL(lista.Titulo);
+                    }
+                } catch (InvalidOperationException) { }
             });
 
             return lista;

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Entidades;
 using Excepciones;
 
 namespace Formularios
@@ -31,7 +25,7 @@ namespace Formularios
         /// <param name="e"></param>
         private void FormAgregarContaminantes_Load(object sender, EventArgs e)
         {
-            this.txtNombre.Text = "Fabricas por todos lados";
+            this.txtNombre.Text = "Analisis General";
             this.cmbAgente.DataSource = Enum.GetValues(typeof(EAgentes));
         }
 

@@ -32,7 +32,7 @@ namespace Formularios
             this.lblNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
             this.lblGasesEmitidos = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
@@ -70,14 +70,14 @@ namespace Formularios
             this.label3.TabIndex = 2;
             this.label3.Text = "Provincia: ";
             // 
-            // label4
+            // lblCantidad
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 185);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Cantidad: ";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(19, 185);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(298, 15);
+            this.lblCantidad.TabIndex = 3;
+            this.lblCantidad.Text = "Cantidad de vehiculos con ese nombre en la provincia: ";
             // 
             // lblGasesEmitidos
             // 
@@ -92,7 +92,7 @@ namespace Formularios
             // 
             this.txtNombre.Location = new System.Drawing.Point(19, 38);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(277, 23);
+            this.txtNombre.Size = new System.Drawing.Size(309, 23);
             this.txtNombre.TabIndex = 5;
             // 
             // cmbTipo
@@ -101,7 +101,7 @@ namespace Formularios
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(19, 93);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(277, 23);
+            this.cmbTipo.Size = new System.Drawing.Size(309, 23);
             this.cmbTipo.TabIndex = 6;
             // 
             // cmbProvincia
@@ -110,28 +110,28 @@ namespace Formularios
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(19, 148);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(277, 23);
+            this.cmbProvincia.Size = new System.Drawing.Size(309, 23);
             this.cmbProvincia.TabIndex = 7;
             // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(19, 203);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(277, 23);
+            this.txtCantidad.Size = new System.Drawing.Size(309, 23);
             this.txtCantidad.TabIndex = 8;
             // 
             // txGasesEmitidos
             // 
             this.txGasesEmitidos.Location = new System.Drawing.Point(19, 258);
             this.txGasesEmitidos.Name = "txGasesEmitidos";
-            this.txGasesEmitidos.Size = new System.Drawing.Size(277, 23);
+            this.txGasesEmitidos.Size = new System.Drawing.Size(309, 23);
             this.txGasesEmitidos.TabIndex = 9;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(19, 301);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(175, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(207, 23);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@ namespace Formularios
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(200, 301);
+            this.btnCancelar.Location = new System.Drawing.Point(232, 301);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 23);
             this.btnCancelar.TabIndex = 11;
@@ -153,7 +153,7 @@ namespace Formularios
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(314, 342);
+            this.ClientSize = new System.Drawing.Size(340, 342);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -163,7 +163,7 @@ namespace Formularios
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblGasesEmitidos);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNombre);
@@ -181,7 +181,7 @@ namespace Formularios
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label lblGasesEmitidos;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cmbTipo;

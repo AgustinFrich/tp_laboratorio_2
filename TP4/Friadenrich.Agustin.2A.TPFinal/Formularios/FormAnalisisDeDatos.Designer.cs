@@ -159,7 +159,7 @@ namespace Formularios
             this.lblCantidadTotal1.AutoSize = true;
             this.lblCantidadTotal1.Location = new System.Drawing.Point(7, 81);
             this.lblCantidadTotal1.Name = "lblCantidadTotal1";
-            this.lblCantidadTotal1.Size = new System.Drawing.Size(151, 15);
+            this.lblCantidadTotal1.Size = new System.Drawing.Size(149, 15);
             this.lblCantidadTotal1.TabIndex = 2;
             this.lblCantidadTotal1.Text = "Cantidad Total de fabricas: ";
             // 
@@ -178,7 +178,7 @@ namespace Formularios
             this.lblGasesTotales1.AutoSize = true;
             this.lblGasesTotales1.Location = new System.Drawing.Point(7, 23);
             this.lblGasesTotales1.Name = "lblGasesTotales1";
-            this.lblGasesTotales1.Size = new System.Drawing.Size(81, 15);
+            this.lblGasesTotales1.Size = new System.Drawing.Size(79, 15);
             this.lblGasesTotales1.TabIndex = 0;
             this.lblGasesTotales1.Text = "Gases Totales:";
             // 
@@ -275,7 +275,7 @@ namespace Formularios
             this.lblCantidadTotal2.AutoSize = true;
             this.lblCantidadTotal2.Location = new System.Drawing.Point(6, 81);
             this.lblCantidadTotal2.Name = "lblCantidadTotal2";
-            this.lblCantidadTotal2.Size = new System.Drawing.Size(157, 15);
+            this.lblCantidadTotal2.Size = new System.Drawing.Size(155, 15);
             this.lblCantidadTotal2.TabIndex = 3;
             this.lblCantidadTotal2.Text = "Cantidad Total de vehiculos:";
             // 
@@ -294,7 +294,7 @@ namespace Formularios
             this.lblGasesTotales2.AutoSize = true;
             this.lblGasesTotales2.Location = new System.Drawing.Point(6, 23);
             this.lblGasesTotales2.Name = "lblGasesTotales2";
-            this.lblGasesTotales2.Size = new System.Drawing.Size(81, 15);
+            this.lblGasesTotales2.Size = new System.Drawing.Size(79, 15);
             this.lblGasesTotales2.TabIndex = 1;
             this.lblGasesTotales2.Text = "Gases Totales:";
             // 
@@ -306,6 +306,9 @@ namespace Formularios
             this.Controls.Add(this.grpVehiculos);
             this.Controls.Add(this.grpFabricas);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAnalisisDeDatos";
             this.Text = "AnalisisDeDatos";
             this.Load += new System.EventHandler(this.AnalisisDeDatos_Load);

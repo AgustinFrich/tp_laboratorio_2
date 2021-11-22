@@ -48,6 +48,7 @@ namespace Formularios
                 this.Text = "Agregar Fábrica";
                 lblGasesEmitidos.Text = "Gases emitidos (en toneladas de CO2 por fábrica): ";
                 lblNombre.Text = "Nombre de la fábrica: ";
+                lblCantidad.Text = "Cantidad de fabricas con ese nombre en la provincia";
                 cmbTipo.DataSource = Enum.GetValues(typeof(ETipoFabrica));
             } else 
             {
