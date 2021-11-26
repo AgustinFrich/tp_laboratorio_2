@@ -24,7 +24,7 @@ namespace Test
                 Console.WriteLine(e.Message);
                 Console.WriteLine("");
             }
-
+            
             Fabrica f1 = new Fabrica(ETipoFabrica.Metalurgica, EProvincias.Catamarca, "FA");
             Fabrica f2 = new Fabrica(ETipoFabrica.Quimica, EProvincias.Misiones, "FB");
             Fabrica f3 = new Fabrica(ETipoFabrica.Metalurgica, EProvincias.Misiones, "FC", 1, 750000);
@@ -55,16 +55,16 @@ namespace Test
 
             //agrego a la base de datos
             if (!v1.AgregarASQL(vehiculos.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + v1.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + v1.Nombre + " a la base de datos");
             if (!v2.AgregarASQL(vehiculos.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + v2.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + v2.Nombre + " a la base de datos");
             if (!v3.AgregarASQL(vehiculos.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + v3.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + v3.Nombre + " a la base de datos");
             if (!v4.AgregarASQL(vehiculos.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + v4.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + v4.Nombre + " a la base de datos");
             //argrego repetido
             if (!v2.AgregarASQL(vehiculos.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + v2.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + v2.Nombre + " a la base de datos");
 
             fabricas += f1;
             fabricas += f2;
@@ -75,16 +75,16 @@ namespace Test
 
             //agrego a la base de datos
             if (!f1.AgregarASQL(fabricas.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + f1.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + f1.Nombre + " a la base de datos");
             if (!f2.AgregarASQL(fabricas.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + f2.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + f2.Nombre + " a la base de datos");
             if (!f3.AgregarASQL(fabricas.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + f3.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + f3.Nombre + " a la base de datos");
             if (!f4.AgregarASQL(fabricas.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + f4.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + f4.Nombre + " a la base de datos");
             //argrego repetido
             if (!f4.AgregarASQL(fabricas.Titulo))
-                Console.WriteLine("\nNo se pudo agregar " + f4.Nombre + "a la base de datos");
+                Console.WriteLine("\nNo se pudo agregar " + f4.Nombre + " a la base de datos");
 
             //Mostrar lista local
             Console.WriteLine("Muestro la lista de vehiculos: ");
@@ -232,13 +232,17 @@ namespace Test
             Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("En la lista de fabricas, Gases totales en la provincia Misiones: " + fabricas.ContaminacionEnLaProvincia(EProvincias.Misiones));
+            Console.WriteLine("En la lista de fabricas, Gases totales en la provincia Misiones: " + fabricas.ContaminacionEnLaProvincia(EProvincias.Misiones, out int coincidencias1));
+            Console.WriteLine("La cantidad de fabricas en Misiones es: " + coincidencias1);
+
+            Console.WriteLine("\nEn la lista de vehiculos, Gases totales en la provincia Misiones: " + vehiculos.ContaminacionEnLaProvincia(EProvincias.Misiones, out int coincidencias2));
+            Console.WriteLine("La cantidad de vehiculos en Misiones es: " + coincidencias2);
             
-            Console.WriteLine("\nEn la lista de vehiculos, Gases totales en la provincia Misiones: " + vehiculos.ContaminacionEnLaProvincia(EProvincias.Misiones));
+            Console.WriteLine("\nEn la lista de fabricas, Gases totales en el tipo Metalurgica: " + fabricas.ContaminacionPorTipo((int)ETipoFabrica.Metalurgica, out int coincidencias3));
+            Console.WriteLine("La cantidad de fabricas metalurgicas es: " + coincidencias3);
             
-            Console.WriteLine("\nEn la lista de fabricas, Gases totales en el tipo Metalurgica: " + fabricas.ContaminacionPorTipo((int)ETipoFabrica.Metalurgica));
-            
-            Console.WriteLine("\nEn la lista de vehiculos, Gases totales en el tipo Mediano: " + vehiculos.ContaminacionPorTipo((int)ETipoVehiculo.Mediano));
+            Console.WriteLine("\nEn la lista de vehiculos, Gases totales en el tipo Mediano: " + vehiculos.ContaminacionPorTipo((int)ETipoVehiculo.Mediano, out int coincidencias4));
+            Console.WriteLine("La cantidad de vehiculos medianos es: " + coincidencias4);
            
             Console.WriteLine("\nPresione enter para salir.");
             Console.ReadLine();
