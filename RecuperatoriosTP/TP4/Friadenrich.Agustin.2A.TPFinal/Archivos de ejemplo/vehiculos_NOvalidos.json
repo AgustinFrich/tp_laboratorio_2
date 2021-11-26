@@ -1,0 +1,45 @@
+{
+  "Titulo": "Vehiculos unidos",
+  "Elementos": [
+    {
+      "TipoVehiculo": 444,
+      "Nombre": "Hyundai Ioniq",
+      "Provincia": 13,
+      "GasesEmitidos": 35,
+      "Cantidad": 1500
+    },
+    {
+      "TipoVehiculo": 85,
+      "Nombre": "Mercedes Benz - Camion",
+      "Provincia": 22,
+      "GasesEmitidos": 150,
+      "Cantidad": -900
+    },
+    {
+      "TipoVehiculo": 60,
+      "Nombre": "Ford T",
+      "Provincia": .8,
+      "GasesEmitidos": 650,
+      "Cantidad": 1300
+    }, 
+    Texto no valido.
+    {
+      "TipoVehiculo": 60,
+      "Nombre": "Toyota Etios",
+      "Provincia": 1"1",
+      "GasesEmitidos": 70,
+      "Cantidad": 550
+    },
+    {
+      "TipoVehiculo": 40,
+      "Nombre": ,
+      "Provincia": 7,
+      "GasesEmitidos": 42,
+      "Cantidad": 2200
+    },
+    {
+      "TipoVehiculo": 20,
+      "Nombre": "Ford Mondeo Hybrid",
+    }
+  ]
+}
