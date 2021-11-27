@@ -5,7 +5,12 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
-        public enum ETipo { CuatroPuertas, CincoPuertas }
+        public enum ETipo 
+        { 
+            CuatroPuertas, 
+            CincoPuertas 
+        }
+
         ETipo tipo;
 
         /// <summary>
@@ -14,9 +19,10 @@ namespace Entidades
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
         /// <param name="color"></param>
-        public Sedan(EMarca marca, string chasis, ConsoleColor color) : base(chasis, marca, color)
+        /// <param name="tipo"></param>
+        public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : base(chasis, marca, color)
         {
-            this.tipo = ETipo.CuatroPuertas;
+            this.tipo = tipo;
         }
 
         /// <summary>
@@ -25,10 +31,8 @@ namespace Entidades
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
         /// <param name="color"></param>
-        /// <param name="tipo"></param>
-        public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : this(marca, chasis, color)
+        public Sedan(EMarca marca, string chasis, ConsoleColor color) : this(marca, chasis, color, ETipo.CuatroPuertas)
         {
-            this.tipo = tipo;
         }
 
         /// <summary>
@@ -47,11 +51,9 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
+            sb.Append(base.Mostrar());
             sb.AppendLine("TIPO : " + this.tipo);
-            sb.AppendLine("");
-            sb.AppendLine("---------------------");
+            sb.AppendLine("\n---------------------");
 
             return sb.ToString();
         }

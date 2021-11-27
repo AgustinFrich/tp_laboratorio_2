@@ -17,22 +17,6 @@ namespace Entidades
             }
         }
 
-        /// <summary>
-        /// Constructor vacío de la clase. Asigna el valor del campo numero en 0.
-        /// </summary>
-        public Operando()
-        {
-            Numero = "0";
-        }
-
-        /// <summary>
-        /// Constructor que asigna el valor del parámetro de tipo double en el campo numero.
-        /// </summary>
-        /// <param name="numero">Numero a asignar</param>
-        public Operando(double numero)
-        {
-            Numero = numero.ToString();
-        }
 
         /// <summary>
         /// Constructor que asigna el valor del parámetro de tipo string en el campo numero.
@@ -44,15 +28,28 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Constructor que asigna el valor del parámetro de tipo double en el campo numero.
+        /// </summary>
+        /// <param name="numero">Numero a asignar</param>
+        public Operando(double numero) : this(numero.ToString())
+        {
+        }
+
+        /// <summary>
+        /// Constructor vacío de la clase. Asigna el valor del campo numero en 0.
+        /// </summary>
+        public Operando() : this(0)
+        {
+        }
+
+        /// <summary>
         /// Valida que el string pasado como parametro sea de tipo double.
         /// </summary>
         /// <param name="strNumero">Cadena a validar</param>
         /// <returns>El numero como double o 0 en caso de que la cadena no sea numerica.</returns>
         double ValidarOperando(string strNumero)
         {
-            double validacion = 0;
-
-            double.TryParse(strNumero, out validacion);
+            double.TryParse(strNumero, out double validacion);
 
             return validacion;
         }
@@ -162,7 +159,12 @@ namespace Entidades
         /// <returns>La division entre los numeros de los operandos</returns>
         public static double operator /(Operando n1, Operando n2)
         {
-            return (n1.numero / n2.numero);
+            double retorno = double.MinValue;
+            if (n2.numero != 0)
+            {
+                retorno = n1.numero / n2.numero;
+            }
+            return retorno;
         }
     }
 }

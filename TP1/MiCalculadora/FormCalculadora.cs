@@ -36,15 +36,8 @@ namespace MiCalculadora
         /// <param name="e"></param>
         public void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
-            } else
-            {
-                e.Cancel = false;
-            }
+            e.Cancel = (MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No);
         }
-
 
         /// <summary>
         /// Obtiene los datos del formulario y realiza la operación indicada. Escribe el resultado en un label y guarda la operacion en una lista.
@@ -56,19 +49,28 @@ namespace MiCalculadora
             StringBuilder sb = new StringBuilder();
 
             lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-
-            sb.Append(txtNumero1.Text + " ");
-
-            if(cmbOperador.Text != "")
+            if (!String.IsNullOrWhiteSpace(txtNumero1.Text))
+                sb.Append(txtNumero1.Text + " ");
+            else
+                sb.Append("0 ");
+            
+            if (cmbOperador.Text != "")
             {
                 sb.Append(cmbOperador.Text + " ");
-            } else {
+            }
+            else
+            {
                 sb.Append("+ ");
             }
 
-            sb.Append(txtNumero2.Text + " = " + lblResultado.Text);
+            if (!String.IsNullOrWhiteSpace(txtNumero2.Text))
+                sb.Append(txtNumero2.Text);
+            else
+                sb.Append('0');
+
+            sb.Append(" = " + lblResultado.Text);
+
             lstOperaciones.Items.Add(sb);
-            
         }
 
         /// <summary>
@@ -82,7 +84,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// Muestra un mensaje preguntando si desea salir o no de la aplicación.
+        /// Ejecuta la funcion FormClosing, la cual pregunta si desea salir o no del formulario.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -102,13 +104,13 @@ namespace MiCalculadora
 
             sb.Append(lblResultado.Text + " a binario: ");
 
-            if(double.TryParse(lblResultado.Text, out double numero))
+            if (double.TryParse(lblResultado.Text, out double numero))
             {
                 lblResultado.Text = Operando.DecimalBinario(numero);
             }
 
             sb.Append(lblResultado.Text);
-                
+
             lstOperaciones.Items.Add(sb);
         }
 
@@ -151,7 +153,7 @@ namespace MiCalculadora
         /// <returns>El resultado de la operación.</returns>
         static double Operar(string numero1, string numero2, string operador)
         {
-            double retorno = 0;
+            double retorno;
             char.TryParse(operador, out char operadorChar);
             Operando operando1 = new Operando(numero1);
             Operando operando2 = new Operando(numero2);

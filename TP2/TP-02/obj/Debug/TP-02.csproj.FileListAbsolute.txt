@@ -21,3 +21,23 @@ D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-02\TP-02\obj\Debug\TP-02.csprojRes
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.csprojAssemblyReference.cache
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.exe
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\obj\Debug\TP-02.csprojAssemblyReference.cache
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\obj\Debug\TP-02.exe
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\bin\Debug\TP-02.exe
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\bin\Debug\TP-02.pdb
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\bin\Debug\Entidades.dll
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\bin\Debug\Entidades.pdb
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\obj\Debug\TP-02.csproj.CopyComplete
+C:\Users\Agus\source\repos\RecuperatoriosTP\TP2\TP-02\obj\Debug\TP-02.pdb
+C:\Users\Agus\source\repos\TP2\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\Agus\source\repos\TP2\TP-02\bin\Debug\TP-02.exe
+C:\Users\Agus\source\repos\TP2\TP-02\bin\Debug\TP-02.pdb
+C:\Users\Agus\source\repos\TP2\TP-02\bin\Debug\Entidades.dll
+C:\Users\Agus\source\repos\TP2\TP-02\bin\Debug\Entidades.pdb
+C:\Users\Agus\source\repos\TP2\TP-02\obj\Debug\TP-02.csprojAssemblyReference.cache
+C:\Users\Agus\source\repos\TP2\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
+C:\Users\Agus\source\repos\TP2\TP-02\obj\Debug\TP-02.csproj.CopyComplete
+C:\Users\Agus\source\repos\TP2\TP-02\obj\Debug\TP-02.exe
+C:\Users\Agus\source\repos\TP2\TP-02\obj\Debug\TP-02.pdb

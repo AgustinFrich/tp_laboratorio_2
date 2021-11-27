@@ -15,19 +15,20 @@ namespace Entidades
 
         public enum ETipo
         {
-            Ciclomotor, 
-            Sedan, 
-            SUV, 
+            Ciclomotor,
+            Sedan,
+            SUV,
             Todos
         }
 
         #region "Constructores"
-        private Taller()
+        private Taller() : this(0)
+        {
+        }
+
+        public Taller(int espacioDisponible) 
         {
             this.vehiculos = new List<Vehiculo>();
-        }
-        public Taller(int espacioDisponible) : this()
-        {
             this.espacioDisponible = espacioDisponible;
         }
         #endregion
@@ -57,16 +58,15 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", taller.vehiculos.Count, taller.espacioDisponible);
-            
-            sb.AppendLine("");
 
+            sb.AppendLine("");
 
             foreach (Vehiculo v in taller.vehiculos)
             {
                 switch (tipo)
                 {
                     case ETipo.Sedan:
-                        if(v is Sedan)
+                        if (v is Sedan)
                         {
                             sb.AppendLine(v.Mostrar());
                         }
@@ -107,7 +107,7 @@ namespace Entidades
             {
                 if (v == vehiculo)
                 {
-                    existe = true;                     
+                    existe = true;
                 }
             }
 
@@ -130,7 +130,7 @@ namespace Entidades
             {
                 if (v == vehiculo)
                 {
-                    taller.vehiculos.Remove(vehiculo);
+                    taller.vehiculos.Remove(v);
                     break;
                 }
             }

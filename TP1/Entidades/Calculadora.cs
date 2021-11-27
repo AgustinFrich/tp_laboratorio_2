@@ -10,12 +10,14 @@ namespace Entidades
         /// <returns>El caracter si es un operador aritmético válido. Caso contrario, retorna '+'.</returns>
         private static char ValidarOperador(char operador)
         {
-            if (!(operador == '-' || operador == '/' || operador == '*'))
+            char retorno = '+';
+
+            if (operador == '-' || operador == '/' || operador == '*')
             {
-                operador = '+';
+                retorno = operador;
             }
 
-            return operador;
+            return retorno;
         }
 
         /// <summary>
@@ -29,20 +31,16 @@ namespace Entidades
         {
             double retorno;
 
-            switch (operador)
+            char operadorValidado = ValidarOperador(operador);
+
+            switch (operadorValidado)
             {
+                // No hay case para '+' porque repetiría código del default.
                 case '-':
                     retorno = num1 - num2;
                     break;
                 case '/':
-                    try
-                    {
-                        retorno = num1 / num2;
-                    }
-                    catch
-                    {
-                        retorno = double.MinValue;
-                    }
+                    retorno = num1 / num2;
                     break;
                 case '*':
                     retorno = num1 * num2;
