@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Entidades;
 using Excepciones;
@@ -76,21 +71,21 @@ namespace Formularios
                 {
                     contaminante = new Fabrica((ETipoFabrica)this.cmbTipo.SelectedItem, this.contaminante.Provincia, this.contaminante.Nombre, cantidad, gasesEmitidos);
                     if (contaminante.ModificarASQL(proveedor))
-                        MessageBox.Show("Se actualizo la fabrica correctamente en la base de datos.");
+                        MessageBox.Show("Se actualizo la fabrica correctamente en la base de datos.", "Modificación exitosa!");
                     else
-                        MessageBox.Show("No se pudo actualizar la fabrica en la base de datos.");
+                        MessageBox.Show("No se pudo actualizar la fabrica en la base de datos.", "Error en la modificacion.");
                 }
                 else
                 {
                     contaminante = new Vehiculo((ETipoVehiculo)this.cmbTipo.SelectedItem, this.contaminante.Provincia, this.contaminante.Nombre, cantidad, gasesEmitidos);
                     if(contaminante.ModificarASQL(proveedor))
-                        MessageBox.Show("Se actualizo el vehiculo correctamente en la base de datos.");
+                        MessageBox.Show("Se actualizo el vehiculo correctamente en la base de datos.", "Modificación exitosa!");
                     else
-                        MessageBox.Show("No se pudo actualizar el vehiculo en la base de datos.");
+                        MessageBox.Show("No se pudo actualizar el vehiculo en la base de datos.", "Error en la modificacion.");
                 }
                 if (gasesEmitidos == 0)
                 {
-                    MessageBox.Show("No se asignó un valor a gases emitidos. Se asignará el promedio correspondiente para ese tipo.");
+                    MessageBox.Show("No se asignó un valor a gases emitidos. Se asignará el promedio correspondiente para ese tipo.", "Los gases emitidos nulos.");
                 }
             }
             catch (NumeroFueraDeRangoException err)
